@@ -1,0 +1,93 @@
+Flutter crash report; please file at https://github.com/flutter/flutter/issues.
+
+## command
+
+flutter upgrade
+
+## exception
+
+ArgumentError: Invalid argument(s): Cannot find executable for /Users/paetow/flutter/bin/cache/dart-sdk/bin/pub.
+
+```
+#0      _getExecutable (package:process/src/interface/local_process_manager.dart:115)
+#1      LocalProcessManager.start (package:process/src/interface/local_process_manager.dart:43)
+#2      runCommand (package:flutter_tools/src/base/process.dart:107)
+#3      runCommandAndStreamOutput (package:flutter_tools/src/base/process.dart:125)
+<asynchronous suspension>
+#4      pubGet (package:flutter_tools/src/dart/pub.dart:55)
+<asynchronous suspension>
+#5      UpgradeCommand.runCommand (package:flutter_tools/src/commands/upgrade.dart:71)
+<asynchronous suspension>
+#6      FlutterCommand.verifyThenRunCommand (package:flutter_tools/src/runner/flutter_command.dart:210)
+<asynchronous suspension>
+#7      FlutterCommand.run (package:flutter_tools/src/runner/flutter_command.dart:156)
+<asynchronous suspension>
+#8      CommandRunner.runCommand (package:args/command_runner.dart:194)
+<asynchronous suspension>
+#9      FlutterCommandRunner.runCommand (package:flutter_tools/src/runner/flutter_command_runner.dart:261)
+<asynchronous suspension>
+#10     CommandRunner.run.<anonymous closure> (package:args/command_runner.dart:109)
+#11     Future.Future.sync (dart:async/future.dart:208)
+#12     CommandRunner.run (package:args/command_runner.dart:109)
+#13     FlutterCommandRunner.run (package:flutter_tools/src/runner/flutter_command_runner.dart:156)
+#14     run.<anonymous closure> (package:flutter_tools/executable.dart:140)
+<asynchronous suspension>
+#15     AppContext._run (package:flutter_tools/src/base/context.dart:76)
+<asynchronous suspension>
+#16     AppContext.runInZone.<anonymous closure> (package:flutter_tools/src/base/context.dart:66)
+#17     _rootRun (dart:async/zone.dart:1120)
+#18     _CustomZone.run (dart:async/zone.dart:1001)
+#19     runZoned (dart:async/zone.dart:1465)
+#20     AppContext.runInZone (package:flutter_tools/src/base/context.dart:65)
+#21     run (package:flutter_tools/executable.dart:113)
+<asynchronous suspension>
+#22     main (package:flutter_tools/executable.dart:66)
+<asynchronous suspension>
+#23     main (file:///Users/paetow/Desktop/flutter/flutter/packages/flutter_tools/bin/flutter_tools.dart:16)
+#24     _startIsolate.<anonymous closure> (dart:isolate-patch/isolate_patch.dart:263)
+#25     _RawReceivePortImpl._handleMessage (dart:isolate-patch/isolate_patch.dart:151)
+```
+
+## flutter doctor
+
+```
+[✓] Flutter (on Mac OS X 10.12.5 16F73, channel alpha)
+    • Flutter at /Users/paetow/flutter
+    • Framework revision dc4ca8db83 (8 weeks ago), 2017-06-21 15:09:10 -0700
+    • Engine revision b0dee695ec
+    • Tools Dart version 1.23.0-dev.11.11
+
+[✓] Android toolchain - develop for Android devices (Android SDK 25.0.3)
+    • Android SDK at /Users/paetow/Desktop/dndApps/androidSdk/
+    • Platform android-25, build-tools 25.0.3
+    • ANDROID_HOME = /Users/paetow/Desktop/dndApps/androidSdk/
+    • Java binary at: /Applications/Android Studio.app/Contents/jre/jdk/Contents/Home/bin/java
+    • Java version: OpenJDK Runtime Environment (build 1.8.0_112-release-b06)
+
+[-] iOS toolchain - develop for iOS devices (Xcode 8.3.3)
+    • Xcode at /Applications/Xcode.app/Contents/Developer
+    • Xcode 8.3.3, Build version 8E3004b
+    ✗ ideviceinstaller not available; this is used to discover connected iOS devices.
+      To install, run:
+        brew update
+        brew install --HEAD libimobiledevice
+        brew install ideviceinstaller
+    ✗ ios-deploy not installed. To install:
+        brew update
+        brew install ios-deploy
+    • CocoaPods version 1.2.1
+
+[✓] Android Studio (version 2.3)
+    • Android Studio at /Applications/Android Studio.app/Contents
+    • Gradle version 3.2
+    • Java version: OpenJDK Runtime Environment (build 1.8.0_112-release-b06)
+
+[✓] IntelliJ IDEA Ultimate Edition (version 2017.1.2)
+    • Dart plugin version 171.4424
+    • Flutter plugin version 13.1
+
+[✓] Connected devices
+    • ONE E1003 • 2bcc12e2                             • android-arm • Android 6.0.1 (API 23)
+    • iPhone 7  • 200E6BD7-DA2E-4115-87EB-239533E56CDF • ios         • iOS 10.3 (simulator)
+
+```
