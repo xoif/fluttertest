@@ -1,6 +1,3 @@
-// Copyright 2017 The Chromium Authors. All rights reserved.
-// Use of this source code is governed by a BSD-style license that can be
-// found in the LICENSE file.
 
 import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
@@ -31,7 +28,6 @@ class CashBookState extends State<CashBook> {
         new TransactionObject("Startguthaben", 0.0)],
       removedItemBuilder: _buildRemovedItem,
     );
-    //_nextItem = 3;
   }
 
   // Used to build list items that haven't been removed.
@@ -62,11 +58,10 @@ class CashBookState extends State<CashBook> {
       tag: tag,
       amount: amount,
       selected: false,
-      // No gesture detector here: we don't want removed items to be interactive.
     );
   }
 
-  // Insert the "next item" into the list model.
+  // Open dialog in order to add new transaction to the list.
   void _insert() {
     String tag;
     double amount;
@@ -285,31 +280,3 @@ class TransactionObject {
     this.amount = amount;
   }
 }
-
-
-/*
-Sample Catalog
-
-Title: AnimatedList
-
-Summary: In this app an AnimatedList displays a list of cards which stays
-in sync with an app-specific ListModel. When an item is added to or removed
-from the model, a corresponding card items animate in or out of view
-in the animated list.
-
-Description:
-Tap an item to select it, tap it again to unselect. Tap '+' to insert at the
-selected item, '-' to remove the selected item. The tap handlers add or
-remove items from a `ListModel<E>`, a simple encapsulation of `List<E>`
-that keeps the AnimatedList in sync. The list model has a GlobalKey for
-its animated list. It uses the key to call the insertItem and removeItem
-methods defined by AnimatedListState.
-
-Classes: AnimatedList, AnimatedListState
-
-Sample: AnimatedListSample
-
-See also:
-  - The "Components-Lists: Controls" section of the material design specification:
-    <https://material.io/guidelines/components/lists-controls.html#>
-*/
