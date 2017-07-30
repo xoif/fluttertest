@@ -133,7 +133,10 @@ class CashBookState extends State<CashBook> {
           new RaisedButton(
               child: new Text("Go"),
               onPressed: () {
-                _list.insert(_list.length, new TransactionObject(tag, amount));
+                if (tag != null && amount != null && type != null) {
+                  _list.insert(0, new TransactionObject(tag, type * amount));
+                  Navigator.of(context).pop();
+                }
               }
           )
         ]
