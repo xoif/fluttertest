@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'HelloWorld.dart';
+import 'package:fluttertest/CashBook.dart';
 
 void main() {
   runApp(new MaterialApp(
@@ -20,13 +20,12 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     TextStyle textStyle = Theme.of(context).textTheme.display1;
 
-// Create first input field
+    // Create first input field
     Text addCashBook = new Text("Neues Kassenbuch", style: textStyle, textAlign: TextAlign.left);
 
     Icon cashBookIcon = new Icon(Icons.add, size: 128.0, color: textStyle.color);
 
     Text existingCashBook = new Text("Bestehendes Kassenbuch:", style: textStyle);
-
 
     // Create another input field
     TextField existingTokenTextField = new TextField(
@@ -53,13 +52,15 @@ class MyApp extends StatelessWidget {
           double total = billAmount + calculatedTip;
 
 // Generate dialog
-          AlertDialog dialog = new AlertDialog(
-              content: new Text("Tip: \$$calculatedTip \n"
-                  "Total: \$$total")
-          );
-
-// Show dialog
-          showDialog(context: context, child: dialog);
+          Navigator.of(context).push(new MaterialPageRoute<Null>(
+            builder: (BuildContext context) {
+              return new Scaffold(
+                body: new Center(
+                  child: new CashBook(),
+                ),
+              );
+            },
+          ));
         }
     );
 
@@ -87,7 +88,7 @@ class MyApp extends StatelessWidget {
         )
     );
 
-    AppBar appBar = new AppBar(title: new Text("Tip Calculator"));
+    AppBar appBar = new AppBar(title: new Text("CashBook App"));
     Scaffold scaffold = new Scaffold(appBar: appBar,
         body: container);
 
